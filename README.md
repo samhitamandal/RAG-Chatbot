@@ -2,15 +2,15 @@ This is a deep learning and natural language(NLP) based prototype for a  Retriev
 
 Tech Stack used in this prototype:
 
--Langchain
+*Langchain
 
--PyPdf
+*PyPdf
 
--PyTorch
+*PyTorch
 
--HuggingFace
+*HuggingFace
 
--FAISS Vector Database
+*FAISS Vector Database
 
 In this prototype you can upload PDFs from your own system and ask the bot queries related to your uploaded document.Using LangChain PyPDF the document is loaded and split into chunks.Using Sentence Transformer Embeddings the document chunks are converted into embeddings(numeric representation of document chunk(s)) which is stores in the FAISS Vector Database.Vector Database is used over traditional database because it provides the function Maximal Marginal Relevance(MMR) which finds contextually relevant documents for response.We will use MMR over similarity search because it gives back contextually right documents while ensuring diversity.Using LangChain Conversational Retrieval Chain of type Refine, the relevant documents (found through MMR) are used to extract information to form a coherent answer.
 
